@@ -1,6 +1,7 @@
 package factory;
 
-public class PizzariaConcreta implements Pizzaria {
+public class PizzariaConcreta extends Pizzaria {
+
     @Override
     public Pizza pedirPizza(String tipo) {
         if (tipo.equalsIgnoreCase("Calabresa")) {

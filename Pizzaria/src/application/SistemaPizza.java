@@ -94,7 +94,7 @@ public class SistemaPizza {
             }
         }
 
-        pizzaPersonalizada.preparar();  // Precisa tar Pizzaria(Factory)
+        pizzaPersonalizada.preparar();  // Precisa tar em Pizzaria(Factory)
         pizzaPersonalizada.assar();
         pizzaPersonalizada.cortar();
         pizzaPersonalizada.embalar();

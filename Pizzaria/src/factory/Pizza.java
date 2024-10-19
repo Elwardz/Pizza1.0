@@ -5,10 +5,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Pizza {
-    protected String nome; //private
-    protected List<String> recheios = new ArrayList<>(); //private
-    //pode criar dois cosntrutores: um vazio e outro com tudo
-    public abstract String getNome();
+    private String nome;  // Agora é private
+    private List<String> recheios;  // Agora é private
+
+    // Construtor vazio
+    public Pizza() {
+        this.recheios = new ArrayList<>();
+    }
+
+    // Construtor com nome e recheios
+    public Pizza(String nome, List<String> recheios) {
+        this.nome = nome;
+        this.recheios = new ArrayList<>(recheios); // Clona a lista para evitar modificações externas
+    }
+
+    public String getNome() {
+        return nome;
+    }
 
     public void adicionarRecheio(String recheio) {
         recheios.add(recheio);
@@ -35,6 +48,9 @@ public abstract class Pizza {
         System.out.println("Embalando Pizza de " + getNome());
     }
 
-    // Método clone deve ser adicionado aqui // ??
+    public List<String> getRecheios() {
+        return recheios;
+    }
+
     public abstract Pizza clone();
 }
