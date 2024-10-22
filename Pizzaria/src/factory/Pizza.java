@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Pizza {
-    private String nome;  // Agora é private
-    private List<String> recheios;  // Agora é private
+    private String nome;
+    private List<String> recheios;
 
     // Construtor vazio
     public Pizza() {

@@ -46,7 +46,6 @@ public class SistemaPizza {
         }
     }
 
-
     private static void fazerPedido(Scanner scanner, Pizzaria pizzaria) {
         System.out.println("\nEscolha o tipo de pizza:");
         System.out.println("1 - Calabresa");
@@ -57,10 +56,18 @@ public class SistemaPizza {
         String tipo = (tipoPizza == 1) ? "Calabresa" : "Marguerita";
         Pizza pizza = pizzaria.pedirPizza(tipo);
 
-        // Clona a pizza para personalização
-        Pizza pizzaPersonalizada = pizza.clone();
+        Pizza pizzaPersonalizada = pizza.clone(); // Clona a pizza para personalização
 
-        while (true) { //
+        adicionarRecheios(scanner, pizzaPersonalizada);
+
+        pizzaria.processarPedido(pizzaPersonalizada);
+
+        pedidos.add(pizzaPersonalizada);
+        ultimoPedido = pizzaPersonalizada;
+    }
+
+    private static void adicionarRecheios(Scanner scanner, Pizza pizzaPersonalizada) {
+        while (true) {
             System.out.print("Deseja adicionar um recheio adicional? (1 - Sim, 0 - Não): ");
             int adicionarRecheio = scanner.nextInt();
 
@@ -74,7 +81,7 @@ public class SistemaPizza {
                 int tipoRecheio = scanner.nextInt();
 
                 switch (tipoRecheio) {
-                    case 1: //Factory de Recheios - Fazer outro FACTORY
+                    case 1:
                         pizzaPersonalizada.adicionarRecheio("Queijo Extra");
                         break;
                     case 2:
@@ -93,15 +100,6 @@ public class SistemaPizza {
                 break;
             }
         }
-
-        pizzaPersonalizada.preparar();  // Precisa tar em Pizzaria(Factory)
-        pizzaPersonalizada.assar();
-        pizzaPersonalizada.cortar();
-        pizzaPersonalizada.embalar();
-        System.out.println("Pedido feito com sucesso!");
-
-        pedidos.add(pizzaPersonalizada); // Armazenar a pizza personalizada
-        ultimoPedido = pizzaPersonalizada; // Armazenar o último pedido !@!!!
     }
 
     private static void verPedidos() {
@@ -118,15 +116,15 @@ public class SistemaPizza {
 
     private static void repetirUltimoPedido() {
         if (ultimoPedido != null) {
-
             System.out.println("\nRepetindo último pedido:");
-            ultimoPedido.preparar();
-            ultimoPedido.assar();
-            ultimoPedido.cortar();
-            ultimoPedido.embalar();
+            Pizza pedidoRepetido = ultimoPedido.clone();
 
-            pedidos.add(ultimoPedido.clone());
+            pedidoRepetido.preparar();
+            pedidoRepetido.assar();
+            pedidoRepetido.cortar();
+            pedidoRepetido.embalar();
 
+            pedidos.add(pedidoRepetido);
             System.out.println("Pedido repetido com sucesso!");
         } else {
             System.out.println("Nenhum pedido anterior para repetir.");

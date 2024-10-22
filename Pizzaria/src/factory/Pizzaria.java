@@ -1,6 +1,6 @@
 package factory;
 
-public abstract class Pizzaria { // Agora é uma classe abstrata
+public abstract class Pizzaria {
     public abstract Pizza pedirPizza(String tipo);
 
     public void processarPedido(Pizza pizza) {
@@ -8,6 +8,5 @@ public abstract class Pizzaria { // Agora é uma classe abstrata
         pizza.assar();
         pizza.cortar();
         pizza.embalar();
-        System.out.println("Pedido feito com sucesso!");
     }
 }
