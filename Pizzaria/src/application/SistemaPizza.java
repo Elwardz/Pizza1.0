@@ -1,8 +1,10 @@
 package application;
 
-import factory.Pizzaria;
-import factory.PizzariaConcreta;
-import factory.Pizza;
+import iterator.IteratorIngredientes;
+import model.Pizzaria;
+import model.PizzariaConcreta;
+import model.Pizza;
+import factory.Recheio; // Importando a enumeração Recheio
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,16 +56,14 @@ public class SistemaPizza {
         int tipoPizza = scanner.nextInt();
 
         String tipo = (tipoPizza == 1) ? "Calabresa" : "Marguerita";
-        Pizza pizza = pizzaria.pedirPizza(tipo);
+        Pizza pizza = pizzaria.processarPedido(tipo); // Processa o pedido da pizza base
 
         Pizza pizzaPersonalizada = pizza.clone(); // Clona a pizza para personalização
 
-        adicionarRecheios(scanner, pizzaPersonalizada);
+        adicionarRecheios(scanner, pizzaPersonalizada); // Adiciona recheios personalizados
 
-        pizzaria.processarPedido(pizzaPersonalizada);
-
-        pedidos.add(pizzaPersonalizada);
-        ultimoPedido = pizzaPersonalizada;
+        pedidos.add(pizzaPersonalizada); // Adiciona a pizza personalizada à lista de pedidos
+        ultimoPedido = pizzaPersonalizada; // Define a última pizza como a pizza personalizada
     }
 
     private static void adicionarRecheios(Scanner scanner, Pizza pizzaPersonalizada) {
@@ -80,21 +80,27 @@ public class SistemaPizza {
                 System.out.print("Digite o número do recheio: ");
                 int tipoRecheio = scanner.nextInt();
 
+                // Usando o método apropriado para obter o recheio a partir da enumeração
+                Recheio recheio = null;
                 switch (tipoRecheio) {
                     case 1:
-                        pizzaPersonalizada.adicionarRecheio("Queijo Extra");
+                        recheio = Recheio.QUEIJO_EXTRA;
                         break;
                     case 2:
-                        pizzaPersonalizada.adicionarRecheio("Oliva");
+                        recheio = Recheio.OLIVA;
                         break;
                     case 3:
-                        pizzaPersonalizada.adicionarRecheio("Cebola");
+                        recheio = Recheio.CEBOLA;
                         break;
                     case 4:
-                        pizzaPersonalizada.adicionarRecheio("Pepperoni");
+                        recheio = Recheio.PEPPERONI;
                         break;
                     default:
                         System.out.println("Recheio inválido.");
+                }
+
+                if (recheio != null) {
+                    pizzaPersonalizada.adicionarRecheio(recheio);
                 }
             } else {
                 break;
@@ -109,10 +115,17 @@ public class SistemaPizza {
         } else {
             for (Pizza pedido : pedidos) {
                 System.out.println("- Pizza de " + pedido.getNome());
-                System.out.println("  Recheios: " + pedido.getIteratorIngredientes());
+                System.out.print("  Recheios: ");
+
+                IteratorIngredientes iterator = pedido.getIteratorIngredientes();
+                while (iterator.hasNext()) {
+                    System.out.print(iterator.next() + ", ");
+                }
+                System.out.println(); // Quebra de linha após exibir todos os recheios
             }
         }
     }
+
 
     private static void repetirUltimoPedido() {
         if (ultimoPedido != null) {

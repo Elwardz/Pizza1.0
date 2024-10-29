@@ -1,9 +1,7 @@
 package factory;
 
-public class CebolaFactory extends RecheioFactory {
-    @Override
+public class CebolaFactory {
     public Recheio criarRecheio() {
-        return new Cebola();
+        return Recheio.CEBOLA; // Retorna o recheio de cebola da enumeração
     }
 }
-

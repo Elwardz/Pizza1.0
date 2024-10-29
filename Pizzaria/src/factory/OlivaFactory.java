@@ -1,8 +1,7 @@
 package factory;
 
-public class OlivaFactory extends RecheioFactory {
-    @Override
+public class OlivaFactory {
     public Recheio criarRecheio() {
-        return new Oliva();
+        return Recheio.OLIVA; // Retorna o recheio de oliva da enumeração
     }
 }

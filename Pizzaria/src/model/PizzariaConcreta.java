@@ -1,4 +1,4 @@
-package factory;
+package model;
 
 public class PizzariaConcreta extends Pizzaria {
 

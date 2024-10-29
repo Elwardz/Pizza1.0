@@ -1,8 +1,7 @@
 package factory;
 
-public class QueijoExtraFactory extends RecheioFactory {
-    @Override
+public class QueijoExtraFactory {
     public Recheio criarRecheio() {
-        return new QueijoExtra();
+        return Recheio.QUEIJO_EXTRA; // Retorna o recheio de queijo extra da enumeração
     }
 }

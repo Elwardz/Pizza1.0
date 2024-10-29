@@ -1,6 +1,6 @@
 package prototype;
 
-import factory.Pizza;
+import model.Pizza;
 
 public interface PizzaPrototype {
     Pizza clone();

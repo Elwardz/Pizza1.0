@@ -1,26 +1,32 @@
 package iterator;
 
+import factory.Recheio;
 import java.util.List;
 
 public class IteratorIngredientes {
-    private List<String> recheios;
-    private int posicao;
+    private List<Recheio> recheios;
+    private int position = 0;
 
-    public IteratorIngredientes(List<String> recheios) {
+    public IteratorIngredientes(List<Recheio> recheios) {
         this.recheios = recheios;
-        this.posicao = 0;
     }
 
     public boolean hasNext() {
-        return posicao < recheios.size();
+        return position < recheios.size();
     }
 
-    public String next() {
-        return hasNext() ? recheios.get(posicao++) : null;
+    public Recheio next() {
+        if (this.hasNext()) {
+            return recheios.get(position++);
+        }
+        return null; // Ou pode lançar uma exceção
     }
 
-    @Override
-    public String toString() {
-        return String.join(", ", recheios); // Converte a lista de recheios em uma String
+    public void remove() {
+        if (position > 0) {
+            recheios.remove(--position);
+        } else {
+            throw new IllegalStateException("Não é possível remover antes de chamar next()");
+        }
     }
 }
