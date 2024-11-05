@@ -1,0 +1,7 @@
+Recibo de Pedido
+===================
+Pizza: Atum
+Ingredientes: Pepperoni, Tomate
+Data e Hora: 05/11/2024 09:41:28
+===================
+Obrigado pela preferência!
