@@ -19,11 +19,12 @@ O projeto é estruturado em pacotes para melhor organização do código. As pri
 - `model`: Contém classes que representam a pizzaria, pizzas e recheios.
 - `factory`: Define os recheios disponíveis e outros elementos relacionados.
 - `iterator`: Implementa o padrão Iterator para percorrer os recheios das pizzas.
+- `prototype`: Utiliza o padrão Prototype para clonar pizzas personalizadas.
 
 ## Tecnologias Utilizadas
 
 - Java
-- Padrões de Projeto (Factory, Iterator)
+- Padrões de Projeto (Factory, Iterator, Prototype)
 
 ## Como Executar o Projeto
 
