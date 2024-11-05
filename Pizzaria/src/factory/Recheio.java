@@ -4,7 +4,8 @@ public enum Recheio {
     QUEIJO_EXTRA(1, "Queijo Extra"),
     OLIVA(2, "Oliva"),
     CEBOLA(3, "Cebola"),
-    PEPPERONI(4, "Pepperoni");
+    PEPPERONI(4, "Pepperoni"),
+    TOMATE(5, "Tomate"); // Novo recheio adicionado
 
     private final int tipo;
     private final String nome;
@@ -27,6 +28,5 @@ public enum Recheio {
     public String toString() {
         return nome;
     }
-
 }
 
