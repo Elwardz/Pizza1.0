@@ -1,0 +1,7 @@
+Recibo de Pedido
+===================
+Pizza: Marguerita
+Recheios: Pepperoni, Queijo Extra
+Data e Hora: 05/11/2024 20:28:26
+===================
+Obrigado pela preferência!

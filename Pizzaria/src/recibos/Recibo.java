@@ -21,7 +21,7 @@ public class Recibo {
             writer.write("Pizza: " + pedido.getNome() + "\n");
 
             // Lista os ingredientes
-            writer.write("Ingredientes: ");
+            writer.write("Recheios: ");
             IteratorIngredientes iterator = pedido.getIteratorIngredientes();
             while (iterator.hasNext()) {
                 writer.write(iterator.next().toString());
@@ -42,3 +42,10 @@ public class Recibo {
         }
     }
 }
+
+
+/*
+- Adicionar um Factory de Valores. Ou Gerar os Valores. Voce quem Sabe.
+- Mostrar os valores no Recibo.
+- Aplicar os erros de excecao.
+ */

@@ -1,0 +1,7 @@
+Recibo de Pedido
+===================
+Pizza: Mussarela
+Recheios: Oliva, Queijo Extra, Queijo Extra, Queijo Extra, Tomate
+Data e Hora: 05/11/2024 18:47:55
+===================
+Obrigado pela preferência!

@@ -1,0 +1,7 @@
+Recibo de Pedido
+===================
+Pizza: Atum
+Recheios: Queijo Extra, Cebola
+Data e Hora: 05/11/2024 19:05:24
+===================
+Obrigado pela preferência!

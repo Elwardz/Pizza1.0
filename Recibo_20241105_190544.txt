@@ -1,0 +1,7 @@
+Recibo de Pedido
+===================
+Pizza: Portuguesa
+Recheios: Tomate, Pepperoni
+Data e Hora: 05/11/2024 19:05:44
+===================
+Obrigado pela preferência!
