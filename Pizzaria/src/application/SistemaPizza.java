@@ -210,7 +210,7 @@ public class SistemaPizza {
                 pedidoRepetido.preparar();
                 pedidoRepetido.assar();
                 pedidoRepetido.cortar();
-                pedidoRepetido.embalar();
+                pedidoRepetido.embalar(); //
 
                 // Exibe a pizza repetida
                 System.out.println("Pedido repetido com sucesso!");
