@@ -1,5 +1,7 @@
 # Sistema de Pizzaria
-![DALL·E-2024-11-28-00 15](https://github.com/user-attachments/assets/939d79d8-0f3f-4f87-ba0e-294628951e3c)
+
+![Uploading Sistema de Pizzaria em Java com balcão de pizzaria, computador, pizzas, recheios extras, recibos e logotipo de pizzaria.png…]()
+
 Este é um sistema de gerenciamento de pedidos de pizzaria, onde os usuários podem fazer pedidos de diferentes tipos de pizzas, adicionar recheios personalizados e visualizar seus pedidos. O sistema também permite gerar recibos para cada pedido feito.
 
 ## Funcionalidades
